@@ -1,0 +1,68 @@
+{%extends 'base.html'%}
+
+{%block contenido%}
+
+    <div class="container">
+        <h2>Editar camara {{camara.idCamara}} {{camara.nombreCamara}}</h2>
+        <form method="post" id="formulario_editar" action="" enctype="multipart/form-data">
+            {%csrf_token%}
+
+            <div class="mb-3">
+                <label class="form-label" for="camaraform.field.name"> Nombre de camara</label>
+                <input type="text" class="form-control" name="nombreCamara" id="nombreCamara" value="{{camara.nombreCamara}}">
+                <small class="text-danger" id="codigo-error"></small>
+            </div>
+            <div class="mb-3">
+                <label for="{{ camaraform.field.name }}">Precio</label>
+                <input type="text" class="form-control" name="precio" id="precio" value="{{camara.precio}}">
+                <small class="text-danger" id="precio-error"></small>
+            </div>
+              <div class="mb-3">
+                <label for="{{ camaraform.field.name }}">Marca</label>
+                <select name="marca" class="form-select">
+                    {%for marca in marcas%}
+                    {% if marca == camara.marca.idMarca %}
+                        <option value="{{marca.idMarca}}">{{marca.nombreMarca}}</option>
+                    {% else %}
+                        <option value="{{marca.idMarca}}" selected>{{marca.nombreMarca}}</option>
+                    {% endif %}
+                    {%endfor%}
+                </select>
+                <small class="text-danger" id="marca-error"></small>
+            </div>
+              <div class="mb-3">
+                <label for="{{ camaraform.field.name }}">Categoria:</label>
+                <select name="categoria" class="form-select">
+                    {%for categoria in categorias%}
+                        {% if categoria == camara.categoria.idCategoria %}
+                            <option value="{{categoria.idCategoria}}"selected>{{categoria.nombreCategoria}}</option>
+                        {% else %}
+                            <option value="{{categoria.idCategoria}}" >{{categoria.nombreCategoria}}</option>
+                        {% endif %}
+                    {%endfor%}
+                </select>
+                <small class="text-danger" id="categoria-error"></small>
+            </div>
+              <div class="mb-3">
+                <label for="{{ camaraform.field.name }}">Descripcion</label>
+                <textarea name="descripcion" id="descripcion" class="form-control" cols="10" rows="5">{{camara.descripcion}}</textarea>
+                <small class="text-danger" id="descripcion-error"></small>
+              </div> 
+              <div class="mb-3">
+                <label for="{{ camaraform.field.name }}">Imagen</label>
+                <input type="file" class="form-control" name="imagen" id="imagen" value="{{camara.imagen}}">
+                <small class="text-danger" id="imagen-error"></small>
+              </div>
+            <div class="mb-3">
+                <label for="{{ camaraform.field.name }}">Stock</label>
+                <input type="text" class="form-control" name="stock" id="stock" value="{{camara.stock}}">
+                <small class="text-danger" id="stock-error"></small>
+            </div>
+
+            <input type="submit" value="Editar" class="btn btn-primary">
+            <a href="{%url 'listado_camaras'%}" class="btn btn-success">Volver</a>
+        </form>
+    </div>
+    
+
+{%endblock%}

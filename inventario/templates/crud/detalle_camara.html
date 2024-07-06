@@ -1,0 +1,32 @@
+{%extends 'base.html'%}
+
+{%block contenido%}
+{% load static %}
+
+<style>
+    .content, .main-content, .container {
+    border: none;
+    background: none;
+}
+
+</style>
+    
+<div class="card" style="width: 18rem; margin: auto; padding: 20px;">
+    <img src="{{camara.imagen.url}}" style="border: solid 2px black; border-radius: 7px;" class="card-img-top" alt="...">
+    <div class="card-body">
+    <h5 class="card-title" style="text-align: center;">{{camara.nombreCamara}}</h5>
+    <p class="card-text" style="text-align: center;">{{camara.descripcion}}</p>
+    <p class="card-text" style="text-align: center;">${{camara.precio}}</p>
+    <p class="card-text" style="text-align: center;">{{camara.stock}}</p>
+    </div>
+    <button id="btn_volver" style="display: grid; margin-left: 60px; max-width: 120px;" type="submit" class="btn btn-primary">Volver</button>
+  </div>
+
+  <script>
+    document.getElementById("btn_volver").addEventListener("click", function(){
+        window.location.href = "{% url 'listado_camaras' %}";
+    });    
+
+  </script>
+
+{%endblock%}

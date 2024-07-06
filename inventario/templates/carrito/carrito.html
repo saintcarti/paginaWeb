@@ -1,0 +1,87 @@
+{%load static%}
+<div id="carrito" class="carrito-posicion">
+<div role="alert">
+    <table class="table table-bordered alert alert-warning">
+        <thead>
+            <tr scope="row" class="text-center"><td colspan="3" style="font-weight:bold; font-size: 18px;">Carrito</td> </tr>
+            <td style="font-size:15px; font-weight: bold; color:black; text-align: center;">MARCA</td>
+            <td style="font-size:15px; font-weight: bold; color:black; text-align: center;">PRECIO</td>
+            <td style="font-size:15px; font-weight: bold; color:black; text-align: center;">CANTIDAD</td>
+        </thead>
+        <tbody>
+        {% if request.session.carrito.items %}
+            {% for key, value in request.session.carrito.items%}
+                {%if value.cantidad > 0 %}
+            <tr>
+                <td id="marca_value" style="font-size:13px;">{{value.marca}}</td>
+                <td id="precio_value" style="font-size:13px;">{{value.precio}}</td>
+                <td id="cantidad_value" style="font-size:13px;">{{value.cantidad}}
+                    <br>
+                    <a href="{%url 'agregar' value.idCamara%}"><img src="{%static 'img/agregar.jpg'%}" style="max-width: 20px; max-height: 20px;"></a>
+                    <a id="btn_restar" href="{%url 'restar' value.idCamara%}"><img src="{%static 'img/borrar.jpg'%}" style="max-width: 20px; max-height: 20px;"></a>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">Total: </th>
+                <td colspan="2">$ {{value.total}}</td>
+            </tr>
+            {%endif%}
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="3">
+                    <div class="alert alert-info text-center" style="font-weight: bold;">Sin productos</div>
+                </td>
+            </tr>
+        {% endif %}
+        </tbody>
+    </table>
+    <hr>
+    <div class="row text-center">
+        <div class="col-6">
+            <a href="{%url 'limpiar'%}" class="btn btn-outline-warning">Limpiar</a>
+        </div>
+        <div class="col-6">
+            <a href="{%url 'generarBoleta'%}" id="btn_comprar" class="btn btn-outline-primary">Comprar</a>
+        </div>
+    </div>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<style>
+    .carrito-posicion {
+    position: fixed;
+    top: 0;
+    margin-top: 66px;
+    right: 0;
+    width: 300px; /* Ajusta según necesites */
+    max-height: 100vh;
+    overflow-y: auto; /* Permite desplazamiento si el contenido es muy largo */
+    z-index: 100; /* Asegura que se muestre por encima de otros elementos */
+    background-color: white; /* O el color que prefieras */
+    border: 1px solid #ccc; /* Estilo opcional */
+    padding: 10px; /* Espaciado interno */
+}
+</style>
+<script>
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+            const btn = document.getElementById('btn_comprar');
+            const cantidad = document.getElementById('cantidad_value');
+            const precio = document.getElementById('precio_value');
+            const marca = document.getElementById('marca_value');
+            
+            if (!cantidad && !precio && !marca) {
+                swal.fire({
+                    title: 'Carrito vacío',
+                    text: 'No hay productos en el carrito',
+                    icon: 'info',
+                    confirmButtonText: 'Aceptar'
+                });
+                btn.disabled = true;
+            } else {
+                btn.disabled = false;
+            }
+        });
+</script>

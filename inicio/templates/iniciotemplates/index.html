@@ -1,0 +1,102 @@
+{%extends 'base.html'%} {%block contenido%} {%load static%}
+
+<style>
+a {
+  color: #001f3f; /* Azul oscuro */
+  text-decoration: none;
+  font-weight: 600;
+  margin: 10px;
+  display: inline-block;
+  animation: linkFadeIn 1s ease-in-out;
+}
+a:hover {
+    color: #001f3f; /* Azul oscuro */
+    text-decoration: underline;
+  }
+
+  @keyframes linkFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+</style>
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img
+        src="{%static 'img/CamaraBasica.jpg'%}"
+        class="d-block mx-auto img-fluid"
+      />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="{%static 'img/CamaraMedio.jpg'%}"
+        class="d-block mx-auto img-fluid"
+      />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="{%static 'img/camarasPremium.jpg'%}"
+        class="d-block mx-auto img-fluid"
+      />
+    </div>
+    <div class="carousel-item">
+      <img src="{%static 'img/kit4.jpg'%}" class="d-block mx-auto img-fluid" />
+    </div>
+    <div class="carousel-item">
+      <img src="{%static 'img/kit5.jpg'%}" class="d-block mx-auto img-fluid" />
+    </div>
+  </div>
+
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#demo"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#demo"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+<div class="p_index">
+  <div class="table table-bordered">
+    <h2>¿Qué es la seguridad con camaras CCTV?</h2>
+    <br />
+    <p>
+      La seguridad con cámaras de circuito cerrado de televisión (CCTV)<br />
+      es un sistema de vigilancia que emplea cámaras para monitorear <br />
+      y grabar actividades en áreas específicas, ya sean públicas o privadas.<br />
+      Estas cámaras son fundamentales para prevenir delitos, proteger
+      propiedades<br />
+      y mantener la seguridad general.
+    </p>
+    <br />
+    <p>
+      La presencia de sistemas CCTV disuade actividades delictivas<br />
+      ofrece evidencia visual en caso de incidentes y promueve una sensación<br />
+      de seguridad en diversos entornos.
+    </p>
+  </div>
+</div>
+<div class="imagenes">
+  <img src="{% static 'img/mujer.jpg' %}" />
+  <img src="{% static 'img/camara.jpg' %}" />
+  <img src="{% static 'img/seguridadcamara.jpg' %}" />
+</div>
+
+{%endblock%}

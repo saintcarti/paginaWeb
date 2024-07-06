@@ -1,0 +1,135 @@
+{%extends 'base.html'%} {%block contenido%} {%load static%}
+<style>
+  a {
+    color: #001f3f; /* Azul oscuro */
+    text-decoration: none;
+    font-weight: 600;
+    margin: 10px;
+    display: inline-block;
+    animation: linkFadeIn 1s ease-in-out;
+  }
+  a:hover {
+    color: #001f3f; /* Azul oscuro */
+    text-decoration: underline;
+  }
+  @keyframes linkFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+</style>
+<section class="content-section">
+  <div class="left-images">
+    <img
+      src="{%static 'img/empresa1.jpg'%}"
+      alt="Imagen izquierda 1"
+      class="left-image"
+    />
+    <img
+      src="{%static 'img/empresa2.jpg'%}"
+      alt="Imagen izquierda 2"
+      class="left-image"
+    />
+    <img
+      src="{%static 'img/empresa7.jpg'%}"
+      alt="Imagen izquierda 3"
+      class="left-image"
+    />
+    <img
+      src="{%static 'img/empresa8.jpg'%}"
+      alt="Imagen izquierda 4"
+      class="left-image"
+    />
+  </div>
+  <div class="p_about">
+    <h1 class="Mision">¿Quienes somos?</h1>
+
+    <p class="Nosotros">
+      TeCuidoSecurity es una empresa joven y dinámica, fundada con la pasión y
+      el compromiso de garantizar la seguridad y la tranquilidad de nuestros
+      clientes. Aunque llevamos solo 3 años en el mercado hemos experimentado un
+      crecimiento significativo y hemos establecido relaciones sólidas con una
+      amplia base de clientes satisfechos.
+    </p>
+
+    <h2 class="Vision">Vision</h2>
+    <p class="seg_p">
+      En TeCuidoSecurity, nuestra visión es convertirnos en líderes reconocidos
+      en la <br />
+      industria de la seguridad electrónica, ofreciendo soluciones de vanguardia
+      que establezcan nuevos estándares de excelencia y confiabilidad. Nos
+      esforzamos por seguir creciendo y expandiéndonos, manteniendo siempre
+      nuestro compromiso con la satisfacción del cliente y la innovación
+      tecnológica.
+    </p>
+
+    <h2 class="Mision">Mision</h2>
+    <p class="Valores">
+      La misión de TeCuidoSecurity es proporcionar a nuestros clientes productos
+      y servicios de seguridad electrónica de alta calidad que superen sus
+      expectativas y les brinden tranquilidad y protección en su vida diaria.
+      Nos comprometemos a seguir ofreciendo soluciones integrales y
+      personalizadas, respaldadas por un equipo profesional y dedicado que se
+      esfuerza por satisfacer las necesidades de seguridad de nuestros clientes
+      en todo momento. Con un enfoque en la innovación y la excelencia en el
+      servicio, estamos decididos a ser el de confianza de nuestros clientes en
+      su viaje hacia un entorno más seguro y protegido. <br />-Integridad .-
+      Actuamos con honestidad y transparencia en todas nuestras operaciones.<br />
+      -Innovación .- Constantemente buscamos mejorar y adaptar nuestras
+      soluciones de seguridad. <br />
+      -Compromiso con el cliente .- Nos dedicamos a proporcionar un servicio
+      excepcional y soluciones personalizadas.<br />
+      -Responsabilidad social y ambiental .- Nos comprometemos a minimizar
+      nuestro impacto ambiental y contribuir positivamente a las comunidades.
+    </p>
+    <h2 class="ubica">Ubicación</h2>
+
+    <p class="ubi">
+      Nuestra oficina principal se encuentra en la ciudad de Santiago, Chile,
+      pero también contamos con sucursales en otras ciudades del país. Si
+      desea visitarnos o ponerse en contacto con nosotros, no dude en
+      comunicarse a través de nuestro formulario de contacto o por teléfono.
+    </p>
+  </div>
+  <div class="right-images">
+    <img
+      src="{%static 'img/empresa4.jpg'%}"
+      alt="Imagen derecha 1"
+      class="right-image"
+    />
+    <img
+      src="{%static 'img/empresa5.jpg'%}"
+      alt="Imagen derecha 2"
+      class="right-image"
+    />
+    <img
+      src="{%static 'img/empresa6.jpg'%}"
+      alt="Imagen derecha 3"
+      class="right-image"
+    />
+    <img
+      src="{%static 'img/empresa9.jpg'%}"
+      alt="Imagen derecha 4"
+      class="right-image"
+    />
+  </div>
+</section>
+
+<div class="video-container">
+  <iframe 
+    class="video"
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/LCGAC0xHFjI"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+</div>
+{%endblock%}

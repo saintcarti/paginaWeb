@@ -1,0 +1,355 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+    background-image: url('../IMG/fondoTeCuidoSecurity.jpg');
+    background-size: cover;
+    background-color: transparent;
+}
+
+.navbar {
+    margin-bottom: 40px; 
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+	
+}
+
+.navbar-brand img {
+    margin-right: 10px;
+}
+
+.nav-link {
+    color: black !important;
+}
+
+
+.nav-link:hover,
+.navbar-brand:hover{
+    color: white !important;
+    background-color: #085066 !important;
+    border-radius: 5px;
+}
+
+.nav-item .nav-link {
+    padding: 10px 15px;
+}
+
+.navbar-text {
+    color: black;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.navbar-toggler-icon {
+    color: black;
+}
+
+#clock {
+    color: black;
+    font-size: 18px;
+    margin-right: 20px;
+}
+
+.main-content {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px; 
+    margin: auto; 
+}
+
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content p {
+    color: #333; 
+}
+
+footer {
+	margin-top: 40px;
+    background-color: slategrey;
+    color: #085066;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+}
+
+.info img {
+    width: 80px;
+    margin-right: 20px;
+    margin-left: 20px;
+    border-radius: 15px;
+}
+
+.contactos h3 {
+    margin-bottom: 5px;
+    color: white;
+    font-size: 15px;
+}
+
+.redes h3 {
+    color: white;
+    margin-bottom: 10px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.redes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.redes-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.redes-icons a {
+    margin: 0 15px;
+}
+
+.redes-icons img {
+    width: 40px;
+    height: 40px;
+    border-radius: 15px;
+}
+
+.carousel-item img {
+    max-width: 35%;
+    height: 300px;
+    display: block;
+    margin: auto;
+    border-radius: 15px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: auto;
+    color: #fff;
+    background: none;
+    border: none;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.containerimage {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.containerimage img {
+    flex-grow: 1;
+    flex-basis: 200;
+    max-height: 300px;
+    max-width: 100%;
+}
+
+.p_index {
+    background-color: #085066;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid whitesmoke;
+    overflow-x: auto;
+    max-width: 70%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.table h2 {
+    color: #fff;
+}
+
+.table p {
+    color: #fff;
+    font-size: 1.5vw;
+    text-align: center;
+}
+
+.imagenes {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.imagenes img {
+    flex-grow: 1;
+    flex-basis: 200;
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    border: 2px solid white;
+    border-radius: 15px;
+}
+.gifmorty {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; 
+}
+
+
+/*---------------------------------------------------------------------------------------------------------
+Index Nosotros*/
+
+.left-images {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 10px;
+}
+
+.left-image {
+    margin-bottom: 10px;
+    margin-left: 10px;
+    border-radius: 15px; 
+    border: 2px solid black; 
+}
+
+
+.right-images {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: 10px;
+}
+
+.right-image {
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border-radius: 15px; 
+    border: 2px solid black; 
+}
+
+
+.content-section {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.p_about {
+    flex-grow: 1;
+    margin: 0 20px;
+    text-align: center; 
+}
+
+.p_about h1,
+.p_about h2,
+.p_about p {
+    text-align: center; 
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+
+.p_about {
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/*---------------------------------------------------------------------------------------------------------
+Index Planes*/
+
+.titulo {
+    font-size: 2rem; 
+    font-weight: bold;
+    text-align: center; 
+    padding: 20px; 
+    border-radius: 10px; 
+    background-color: #085066; 
+    color: white; 
+    border: 2px solid #fff; 
+	margin: 10px auto 60px;
+    max-width: 50%; 
+}
+
+
+
+.card-deck {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; 
+}
+.card {
+    width: calc(33.33% - 20px); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    max-width: 100%;
+    height: auto;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #666;
+}
+
+.card a.btn {
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.card a.btn:hover {
+    background-color: #0056b3;
+}

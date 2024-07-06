@@ -1,0 +1,62 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block contenido%}
+    <div style="display: flex; justify-content: center; align-items: center; max-width: 300px; max-height: 200px; margin: auto;background-color: #085066; padding: 20px; border: solid 2px white; border-radius: 15px; margin-bottom: 20px; margin-top: 20px;" class="conteiner">
+        <h1 style="text-align: center; color: white;">Listado de camaras</h1>
+    </div>
+
+    <div class="container" >
+        <div class="row">
+            <div class="contenedor-tabla" style="max-width:100%; max-height: 500px; overflow: auto; margin: auto;">
+                <table class="table-info" style="width: 100%;" >
+                    <thead>
+                    <tr style="background-color:  #085066; border: solid 2px white; color: white;">
+                        <th style= "padding: 10px;" scope="col">ID</th>
+                        <th style= "padding: 10px;" scope="col">Nombre</th>
+                        <th style= "padding: 10px;" scope="col">Precio</th>
+                        <th style= "padding: 10px;" scope="col">Marca</th>
+                        <th style= "padding: 10px;" scope="col">Categoria</th>
+                        <th style= "padding: 10px;" scope="col">Descripcion</th>
+                        <th style= "padding: 10px;" scope="col">Imagen</th>
+                        <th style= "padding: 10px;" scope="col">Stock</th>
+                        <th style= "padding: 10px;" scope="col">Ver</th>
+                        <th style= "padding: 10px;" scope="col">Editar</th>
+                        <th style= "padding: 10px;" scope="col">Eliminar</th>
+
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {%for camara in camaras%}
+                    <tr style="background-color: #085066; border: solid 2px white; color: white;">
+                        <th style= "padding: 20px;" scope="row">{{camara.idCamara}}</th>
+                        <td style= "padding: 20px;"scope="row">{{camara.nombreCamara}}</td>
+                        <td style= "padding: 20px;"scope="row">{{camara.precio}}</td>
+                        <td style= "padding: 20px;"scope="row">{{camara.marca}}</td>
+                        <td style= "padding: 20px;"scope="row">{{camara.categoria}}</td>
+                        <td style= "padding: 20px; word-wrap: break-word; white-space: normal; max-width: 250px;"scope="row">{{camara.descripcion}}</td>
+                        {%if camara.imagen%} 
+                            <td style= "padding: 20px;"><img  src="{{camara.imagen.url}}" style="height: 70px; width: 70px; border-radius: 8px;"></td>
+                        {%else%}
+                            <td style= "padding: 20px;"><img src="{%static 'img/sinfoto.jpg'%}"></td>
+                        {%endif%}
+                        <td style= "padding: 20px;"scope="row">{{camara.stock}}</td>
+                        <td ><a href="{% url 'detalle_camara' id=camara.idCamara %}"><img src="{%static 'img/detalle.png'%}" style="max-width: 30px; max-height: 30px;"></a></td>
+                        <td ><a href="{% url 'editar_camara' id=camara.idCamara%}"><img src="{%static 'img/editar.png'%}" style="max-width: 30px; max-height: 30px;"></a></td>
+                        <td ><a href="{%url 'eliminar_camara' camara.idCamara%}"><img src="{%static 'img/borrar.jpg'%}" style="max-width: 30px; max-height: 30px;"></a></td>
+                    
+                    </tr>
+                
+                    {%endfor%}
+                
+                </tbody>
+              </table>
+              <br>
+              <a href="{% url 'crear_camara'%}" class="btn btn-success"><img src="{%static 'img/agregar.jpg'%}" style=" max-width: 30px; max-height: 30px;"></a>
+
+            </div>
+        </div>
+    </div>
+    
+
+{%endblock%}

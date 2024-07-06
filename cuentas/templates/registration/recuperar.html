@@ -1,0 +1,131 @@
+{% extends 'base.html' %} {% block contenido %} {% load static %}
+<style>
+  body {
+    background-color: #001f3f; /* Azul oscuro */
+  }
+  .content, .main-content, .container {
+        border: none;
+        background: none;
+    }
+  .form-register {
+    width: 95%;
+    max-width: 500px;
+    margin: auto;
+    background: #f3f3f3;
+    padding: 20px;
+    margin-top: 50px;
+    border-radius: 5px;
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .form-register h4 {
+    margin: 10px 0;
+    color: #001f3f; /* Azul oscuro */
+    text-align: center;
+  }
+
+  .form-register input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #001f3f; /* Azul oscuro */
+    border-radius: 5px;
+    animation: inputFadeIn 1s ease-in-out;
+  }
+
+  @keyframes inputFadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .form-register input[type="submit"] {
+    width: 50%;
+    margin: 20px auto;
+    display: block;
+    background-color: #001f3f; /* Azul oscuro */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: buttonFadeIn 1s ease-in-out;
+  }
+
+  .form-register input[type="submit"]:hover {
+    background-color: #003366; /* Azul más claro */
+    transform: scale(1.05);
+  }
+
+  @keyframes buttonFadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .form-register p {
+    text-align: center;
+    margin-top: 20px;
+    color: #001f3f; /* Azul oscuro */
+  }
+
+  .form-register a {
+    color: #001f3f; /* Azul oscuro */
+    text-decoration: none;
+    font-weight: 600;
+    animation: linkFadeIn 1s ease-in-out;
+  }
+
+  @keyframes linkFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .form-register a:hover {
+    color: #001f3f; /* Azul oscuro */
+    text-decoration: underline;
+  }
+</style>
+<form class="form-register" style="display: grid; justify-content: center">
+  <h4 class="text-recovery">Recuperar Contraseña</h4>
+  <input
+    class="controls"
+    type="text"
+    name="Correo"
+    id="Correo"
+    placeholder="Correo Electrónico"
+  />
+  <input type="submit" value="Enviar" class="btn btn-dark" />
+  <p>
+    ¿Ya Tienes Cuenta?
+    <a class="Boton-inicioSesion" href="{% url 'login' %}">Inicia Sesión</a>
+  </p>
+</form>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+{%extends 'base.html'%}
+
+{%block contenido%}
+
+  <div class="container">
+    <h2>Crear Camara</h2>
+    
+    <form method="post" id="formulario_crear" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="row">
+        <label for="{{ camaraform.field.name }}">
+          {{ camaraform.nombreCamara.label }}
+        </label>
+        {{ camaraform.nombreCamara }}
+      </div>
+      <div class="row">
+        <label for="{{ camaraform.field.name }}">
+          {{ camaraform.precio.label }}
+        </label>
+        {{ camaraform.precio }}
+      </div>
+      <div class="row">
+        <label for="{{ camaraform.field.name }}">
+          {{ camaraform.marca.label }}
+        </label>
+        {{ camaraform.marca }}
+      </div>
+      <div class="row">
+        <label for="{{ camaraform.field.name }}">
+          {{ camaraform.categoria.label }}
+        </label>
+        {{ camaraform.categoria }}
+      </div>
+      <div class="row">
+        <label for="{{ camaraform.field.name }}">
+          {{ camaraform.descripcion.label }}
+        </label>
+        {{ camaraform.descripcion }}
+      </div>
+      <div class="row">
+        <label for="{{ camaraform.field.name }}">
+          {{ camaraform.imagen.label }}
+        </label>
+        {{ camaraform.imagen }}
+      </div>
+      <div class="row">
+        <label for="{{ camaraform.field.name }}">
+          {{ camaraform.stock.label }}
+        </label>
+        {{ camaraform.stock }}
+      </div>
+
+
+
+      <input  style="margin-top: 15px;" type="submit" value="Crear" class="btn btn-primary">
+      <a style="margin-left: 1100px; margin-top: 15px;" href="{%url 'listado_camaras'%}" class="btn btn-dark">Volver</a>
+
+    </form>
+  </div>
+
+{%endblock%}

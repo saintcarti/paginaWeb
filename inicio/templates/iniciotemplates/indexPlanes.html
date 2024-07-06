@@ -1,0 +1,85 @@
+{%extends 'base.html'%} {%block contenido%} {%load static%}
+
+<style>
+  a {
+    color: #001f3f; /* Azul oscuro */
+    text-decoration: none;
+    font-weight: 600;
+    margin: 10px;
+    display: inline-block;
+    animation: linkFadeIn 1s ease-in-out;
+  }
+  a:hover {
+    color: #001f3f; /* Azul oscuro */
+    text-decoration: underline;
+  }
+  @keyframes linkFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+<div class="titulo">Galería de imágenes</div>
+<div class="card-deck">
+  <div class="card">
+    <img src="{% static 'img/kit4.jpg' %}" class="card-img-top" alt="Imagen 1"/>
+    <div class="card-body">
+      <h5 class="card-title">Kit de seguridad básico</h5>
+      <p class="card-text">
+        Descripción del kit de seguridad básico y sus características.
+      </p>
+      <a href="{%url 'inventario'%}" class="btn btn-primary">Ir a mercado</a>
+    </div>
+  </div>
+  <div class="card">
+    <img
+      src="{% static 'img/CamaraBasica.jpg' %}"
+      class="card-img-top"
+      alt="Imagen 2"
+    />
+    <div class="card-body">
+      <h5 class="card-title">Cámara de seguridad básica</h5>
+      <p class="card-text">
+        Descripción de la cámara de seguridad básica y sus especificaciones.
+      </p>
+      <a href="{%url 'inventario'%}" class="btn btn-primary">Ir a mercado</a>
+    </div>
+  </div>
+  <div class="card">
+    <img
+      src="{% static 'img/CamaraMedio.jpg' %}"
+      class="card-img-top"
+      alt="Imagen 3"
+    />
+    <div class="card-body">
+      <h5 class="card-title">Cámara de seguridad de nivel medio</h5>
+      <p class="card-text">
+        Descripción de la cámara de seguridad de nivel medio y sus
+        características.
+      </p>
+      <a href="{%url 'inventario'%}" class="btn btn-primary">Ir a mercado</a>
+    </div>
+  </div>
+  <div class="card">
+    <img
+      src="{% static 'img/camarasPremium.jpg' %}"
+      class="card-img-top"
+      alt="Imagen 4"
+    />
+    <div class="card-body">
+      <h5 class="card-title">Cámaras de seguridad premium</h5>
+      <p class="card-text">
+        Descripción de las cámaras de seguridad premium y sus funciones
+        avanzadas.
+      </p>
+      <a href="{%url 'inventario'%}" class="btn btn-primary">Ir a mercado</a>
+    </div>
+  </div>
+</div>
+
+{%endblock%}

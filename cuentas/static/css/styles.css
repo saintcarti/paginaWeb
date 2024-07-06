@@ -1,0 +1,218 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+    background-image: url('../IMG/fondoTeCuidoSecurity.jpg');
+    background-size: cover;
+}
+
+.navbar {
+    margin-bottom: 40px; 
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    margin-right: 10px;
+}
+
+.nav-link {
+    color: black !important;
+}
+
+.nav-link:hover,
+.navbar-brand:hover {
+    color: white !important;
+    background-color: #085066 !important;
+    border-radius: 5px;
+}
+
+.nav-item .nav-link {
+    padding: 10px 15px;
+}
+
+.navbar-text {
+    color: black;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.navbar-toggler-icon {
+    color: black;
+}
+
+#clock {
+    color: black;
+    font-size: 18px;
+    margin-right: 20px;
+}
+
+div>content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+footer {
+    margin-top: 40px;
+    background-color: slategrey;
+    color: #085066;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+}
+
+.info img {
+    width: 80px;
+    margin-right: 20px;
+    margin-left: 20px;
+    border-radius: 15px;
+}
+
+.contactos h3 {
+    margin-bottom: 5px;
+    color: white;
+    font-size: 15px;
+}
+
+.redes h3 {
+    color: white;
+    margin-bottom: 10px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.redes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.redes-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.redes-icons a {
+    margin: 0 15px;
+}
+
+.redes-icons img {
+    width: 40px;
+    height: 40px;
+    border-radius: 15px;
+}
+
+
+
+
+.table h2 {
+    color: #fff;
+}
+
+.table p {
+    color: #fff;
+    font-size: 1.5vw;
+    text-align: center;
+}
+
+.imagenes {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.imagenes img {
+    flex-grow: 1;
+    flex-basis: 200;
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    border: 2px solid white;
+    border-radius: 15px;
+}
+
+.gifmorty {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; 
+}
+
+/*---------------------------------------------------------------------------------------------------------
+recuperar */
+
+body {
+    background-color: red !important;
+}
+
+.form-register {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+.text-recovery {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.controls {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.controls:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.btn {
+    background-color: #343a40;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #23272b;
+}
+
+p {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.Boton-inicioSesion {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.Boton-inicioSesion:hover {
+    text-decoration: underline;
+}
+

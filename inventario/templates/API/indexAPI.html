@@ -1,0 +1,52 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{%block contenido%}
+<style>
+  a {
+    color: #001f3f; /* Azul oscuro */
+    text-decoration: none;
+    font-weight: 600;
+    margin: 10px;
+    display: inline-block;
+    animation: linkFadeIn 1s ease-in-out;
+  }
+  a:hover {
+    color: #001f3f; /* Azul oscuro */
+    text-decoration: underline;
+  }
+  @keyframes linkFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+  <div class="titulo">
+    <h1 style="color: white;">Personajes de Rick and Morty</h1>
+
+  </div>
+      <div style="margin-left: 115px; margin-right: 115px; margin-bottom: 50px; margin-top: 50px; display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));" id="resultado">
+  </div>
+  <div class="titulo">
+    <div id="button-container" class="btn-group" role="group" aria-label="Basic radio toggle button group">
+        
+        <button id="previous-button" style="color: white;" class="btn">Anterior</button>
+        <button id="next-button" style="color: white;" class="btn">Siguiente</button>
+        
+    
+    </div>
+  </div>
+  <div id="resultado" class="resultado">
+    <!-- Aquí se mostrarán las tarjetas de los personajes -->
+  </div>
+      
+     
+  <script src="{%static 'js/rick.js'%}"></script>
+    
+  {%endblock%}
