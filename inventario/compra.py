@@ -29,7 +29,7 @@ class Carrito:
                         if camara.stock > 0:
                             value["cantidad"] = value["cantidad"] + 1
                             value["precio"] = camara.precio
-                            value["total"] = camara.precio
+                            value["total"] = camara.precio * value["cantidad"]
                             camara.stock -= 1
                         break
             camara.save()

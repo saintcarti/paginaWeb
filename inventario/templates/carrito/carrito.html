@@ -71,8 +71,10 @@
             const cantidad = document.getElementById('cantidad_value');
             const precio = document.getElementById('precio_value');
             const marca = document.getElementById('marca_value');
-            
-            if (!cantidad && !precio && !marca) {
+            const tbody = document.querySelector('tbody');
+
+
+            if (!cantidad && !precio && !marca ) {
                 swal.fire({
                     title: 'Carrito vacío',
                     text: 'No hay productos en el carrito',
@@ -83,5 +85,7 @@
             } else {
                 btn.disabled = false;
             }
+
+            
         });
 </script>

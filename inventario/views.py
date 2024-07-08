@@ -118,30 +118,45 @@ def limpiar_carrito(request):
     return redirect('inventario')
 
 def generarBoleta(request):
+    carrito = request.session.get('carrito', None)
+    if not carrito:
+        # Redirigir a una página de error o mostrar un mensaje
+        return render(request, 'carrito/detallecarrito.html', {'error': 'El carrito está vacío.'})
+
     precio_total = 0
-    for key , value in request.session['carrito'].items():
-        precio_total = precio_total + int(value['precio']) * int(value['cantidad'])
+    productos = []
 
-        boleta = Boleta(total = precio_total)
-        boleta.save()
-        productos = []
-        for key , value in request.session['carrito'].items():
-            producto = Camara.objects.get(idCamara = value['idCamara'])
-            cant = value['cantidad']
-            subtotal = cant * int(value['precio'])
-            detalle = DetalleBoleta(id_boleta = boleta , id_producto = producto, cantidad = cant, subtotal =subtotal)
-            detalle.save()
-            productos.append(detalle)
+    for key, value in carrito.items():
+        precio_total += int(value['precio']) * int(value['cantidad'])
 
-        datos ={
-            'productos':productos,
-            'fecha':boleta.fechaCompra,
-            'total':boleta.total
-        }
-        request.session['boleta'] = boleta.id_boleta
-        carrito = Carrito(request)
-        carrito.vaciar()
+    # Crear la boleta
+    boleta = Boleta(total=precio_total)
+    boleta.save()
+
+    # Crear los detalles de la boleta
+    for key, value in carrito.items():
+        producto = Camara.objects.get(idCamara=value['idCamara'])
+        cant = value['cantidad']
+        subtotal = cant * int(value['precio'])
+        detalle = DetalleBoleta(id_boleta=boleta, id_producto=producto, cantidad=cant, subtotal=subtotal)
+        detalle.save()
+        productos.append(detalle)
+
+    datos = {
+        'productos': productos,
+        'fecha': boleta.fechaCompra,
+        'total': boleta.total
+    }
+    
+    request.session['boleta'] = boleta.id_boleta
+
+    # Vaciar el carrito
+    carrito = Carrito(request)
+    carrito.vaciar()
+
     return render(request, 'carrito/detallecarrito.html', datos)
 
 def detalleCarrito(request):
-    return render(request, 'carrito/detallecarrito.html')
+    carrito = request.session.get('carrito', {})
+    carrito_vacio = not bool(carrito)  # True si el carrito está vacío
+    return render(request, 'carrito/detallecarrito.html', {'carrito_vacio': carrito_vacio, 'carrito': carrito})
