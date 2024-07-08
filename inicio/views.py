@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from inventario.models import Camara
 
 # Create your views here.
 def inicio(request):
@@ -9,7 +10,8 @@ def contacto(request):
     return render(request,'iniciotemplates/indexnosotros.html')
 
 def galery(request):
-    return render(request,'iniciotemplates/indexPlanes.html')
+    camaras = Camara.objects.all()
+    return render(request,'iniciotemplates/indexPlanes.html',{'camaras':camaras})
 
 
 def base(request):
