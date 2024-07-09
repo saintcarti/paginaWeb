@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import logout
 from django.contrib.auth import authenticate, login
+from django.core.mail import send_mail
+from django.http import HttpResponse
 from .models import UserProfile
 from .forms import CustomUserCreationForm
 
@@ -51,3 +53,18 @@ def exit(request):
 
 def recuperar(request):
     return render(request, 'registration/recuperar.html')
+
+
+def enviar_correo(request):
+    send_mail(
+        'prueba',
+        'hecho con fines historicos',
+        'tecuidosecu1234@gmail.com',
+        ['amarocartescampos@gmail.com'],
+        fail_silently=False,
+    )
+    return redirect('frame_correo')
+
+def cargar_frame_correo(request):
+    return render(request, 'tests/emailtest.html')
+
