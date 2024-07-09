@@ -15,14 +15,16 @@
             </tr>
         </thead>
         <tbody>
-            {% for prod in productos %}
+            {% for prod in productos%}
+
             <tr>
                 <td>{{ prod.id_boleta }}</td>
-                <td>{{ prod.nombre }}</td>
-                <td>${{ prod.precio }}</td>
+                <td>{{ prod.id_producto.nombreCamara }}</td>
+                <td>${{ prod.id_producto.precio }}</td>
                 <td>{{ prod.cantidad }}</td>
                 <td>${{ prod.subtotal }}</td>
             </tr>
+                
             {% endfor %}
         </tbody>
         <tfoot>

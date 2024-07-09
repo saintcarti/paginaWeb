@@ -118,6 +118,8 @@ def limpiar_carrito(request):
     return redirect('inventario')
 
 def generarBoleta(request):
+    camara = Camara.objects.all()
+
     carrito = request.session.get('carrito', None)
     if not carrito:
         # Redirigir a una página de error o mostrar un mensaje
@@ -145,7 +147,9 @@ def generarBoleta(request):
     datos = {
         'productos': productos,
         'fecha': boleta.fechaCompra,
-        'total': boleta.total
+        'total': boleta.total,
+        'id_boleta': boleta.id_boleta,
+        'camara': camara
     }
     
     request.session['boleta'] = boleta.id_boleta
@@ -157,6 +161,7 @@ def generarBoleta(request):
     return render(request, 'carrito/detallecarrito.html', datos)
 
 def detalleCarrito(request):
+    
     carrito = request.session.get('carrito', {})
     carrito_vacio = not bool(carrito)  # True si el carrito está vacío
     return render(request, 'carrito/detallecarrito.html', {'carrito_vacio': carrito_vacio, 'carrito': carrito})

@@ -112,15 +112,10 @@
     text-decoration: underline;
   }
 </style>
-<form class="form-register" style="display: grid; justify-content: center">
+<form class="form-register" method="post" style="display: grid; justify-content: center">
+  {% csrf_token %}
   <h4 class="text-recovery">Recuperar Contraseña</h4>
-  <input
-    class="controls"
-    type="text"
-    name="Correo"
-    id="Correo"
-    placeholder="Correo Electrónico"
-  />
+  <input class="controls" type="text" name="Send email" id="Correo" placeholder="Correo Electrónico"/>
   <input type="submit" value="Enviar" class="btn btn-dark" />
   <p>
     ¿Ya Tienes Cuenta?

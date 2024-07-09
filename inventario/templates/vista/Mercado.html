@@ -81,6 +81,7 @@
         {{ camara.descripcion }}
       </p>
       <p class="card-text" style="text-align: center">${{ camara.precio }}</p>
+      <p class="card-text" style="text-align: center">{{ camara.stock }}</p>
       <a
         href="{% url 'agregar' camara.idCamara %}"
         id="btn_comprar"
